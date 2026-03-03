@@ -1,28 +1,100 @@
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Select all navigation links that point to an anchor (start with '#')
+    /* =========================================
+       1. Smooth Scroll for Navigation Links
+    ========================================== */
     const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
     scrollLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-            // Prevent the default sudden jump
+        link.addEventListener("click", function (e) {
             e.preventDefault();
 
-            // Get the target section's ID from the href attribute
             const targetId = this.getAttribute("href");
-            
-            // Skip if the href is just "#"
             if (targetId === "#") return;
 
             const targetElement = document.querySelector(targetId);
 
-            // If the element exists, scroll to it smoothly
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: "smooth",
-                    block: "start" // Aligns the element to the top of the viewport
+                    block: "start"
                 });
             }
         });
     });
+
+
+    /* =========================================
+       2. Scroll Reveal Animation
+    ========================================== */
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+        threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("appear");
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+
+
+    /* =========================================
+       3. Dark Mode Toggle (with persistence)
+    ========================================== */
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+
+            // Save preference
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+
+
+    /* =========================================
+       4. Navbar Active Link Highlight on Scroll
+    ========================================== */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.clientHeight;
+
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active-link");
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active-link");
+            }
+        });
+    });
+
 });
