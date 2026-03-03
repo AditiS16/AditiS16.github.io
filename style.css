@@ -1,61 +1,61 @@
-body {
-    font-family: 'Inter', sans-serif;
-    color: #333;
-    background-color: #f8f9fa;
-    line-height: 1.6;
+/* ===============================
+   Scroll Animation
+================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.profile-header {
-    background: #fff;
-    padding: 3rem 0;
-    border-bottom: 1px solid #eaeaea;
-    margin-bottom: 2rem;
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.profile-img {
-    width: 100%;
-    max-width: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.nav-links a {
-    color: #555;
+/* ===============================
+   Floating Resume Button
+================================= */
+.floating-resume-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0d6efd;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
-    margin-right: 15px;
-    transition: color 0.2s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
-.nav-links a:hover {
-    color: #0d6efd;
+.floating-resume-btn:hover {
+    background: #084298;
+    transform: translateY(-3px);
 }
 
-section {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+/* ===============================
+   Dark Mode
+================================= */
+.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
 }
 
-h2 {
-    font-weight: 700;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+.dark-mode section {
+    background: #1e1e1e;
+    color: #e0e0e0;
 }
 
-.yt-thumb {
-    border-radius: 8px;
-    transition: transform 0.2s;
+.dark-mode .profile-header {
+    background: linear-gradient(120deg, #000000, #1a1a1a);
 }
 
-.yt-thumb:hover {
-    transform: scale(1.02);
+.dark-mode .nav-links a {
+    color: #ccc;
 }
 
-.tech-badge {
-    font-size: 0.85rem;
-    margin: 0.2rem 0;
-    padding: 0.5rem 0.8rem;
+.dark-mode .badge {
+    background: linear-gradient(120deg, #444, #222);
 }
