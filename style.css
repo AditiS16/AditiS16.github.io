@@ -1,0 +1,61 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+.profile-header {
+    background: #fff;
+    padding: 3rem 0;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-links a {
+    color: #555;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #0d6efd;
+}
+
+section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-weight: 700;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.yt-thumb {
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.yt-thumb:hover {
+    transform: scale(1.02);
+}
+
+.tech-badge {
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+    padding: 0.5rem 0.8rem;
+}
