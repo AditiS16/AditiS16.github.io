@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("dark-mode");
         if (toggleBtn) toggleBtn.textContent = "☀ Light Mode";
     }
+    if (toggleBtn && savedTheme !== "dark") {
+        toggleBtn.textContent = "🌙 Dark Mode";
+    }
 
     // Toggle theme
     if (toggleBtn) {
