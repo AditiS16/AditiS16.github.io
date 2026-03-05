@@ -16,7 +16,7 @@
             --bg-section: #ffffff;
             --text-primary: #333333;
             --text-muted: #6c757d;
-            --header-bg: linear-gradient(120deg, #1a1a2e, #16213e):
+            --header-bg: linear-gradient(120deg, #1a1a2e, #16213e);
             --header-text: #ffffff;
             --nav-link: #333333;
             --nav-link-hover: #0d6efd;
@@ -170,14 +170,25 @@
         }
 
         #darkModeToggle {
-            background: rgba(255,255,255,0.1) !important;
-            border: 1px solid rgba(255,255,255,0.3) !important;
+            background-color: #24292e !important;
+            border-color: #24292e !important;
             color: #ffffff !important;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
 
         #darkModeToggle:hover {
-            background: rgba(255,255,255,0.2) !important;
+            background-color: #3a3f45 !important;
+            border-color: #3a3f45 !important;
+        }
+
+        body.dark-mode #darkModeToggle {
+            background-color: #444d56 !important;
+            border-color: #6a737d !important;
+        }
+
+        body.dark-mode #darkModeToggle:hover {
+            background-color: #586069 !important;
         }
 
         .active-link {
@@ -445,10 +456,20 @@
 
             <section id="education" class="fade-in appear">
                 <h2>Education</h2>
-                <p class="small">
-                    <strong>B.Tech – Electrical &amp; Electronics Engineering</strong><br>
-                    VIT, Vellore (2019) | CPI: 8.6/10
-                </p>
+
+                <h6 class="fw-bold mt-3">🎓 VIT, Vellore</h6>
+                <ul class="small">
+                    <li>B.Tech in Electrical and Electronics Engineering, July 2019</li>
+                    <li>CPI: 8.6/10</li>
+                </ul>
+
+                <h6 class="fw-bold mt-3">🏫 Kendriya Vidyalaya</h6>
+                <ul class="small">
+                    <li>XII Standard (CBSE Board) – PCM + Computer Science<br>
+                        Grade: 92%</li>
+                    <li>X Standard (CBSE Board)<br>
+                        CPI: 10/10</li>
+                </ul>
             </section>
 
         </div>
