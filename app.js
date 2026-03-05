@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const toggleBtn = document.getElementById("darkModeToggle");
 
-    // Apply saved theme on page load
+    // Load saved theme when page opens
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (toggleBtn) {
         toggleBtn.addEventListener("click", function () {
 
-            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.toggle("dark-mode");
 
             // Save preference
             localStorage.setItem("theme", isDark ? "dark" : "light");
