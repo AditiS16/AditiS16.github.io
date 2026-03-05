@@ -58,8 +58,8 @@
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 130px;
+            height: 130px;
             object-fit: cover;
             border: 3px solid rgba(255,255,255,0.3);
             border-radius: 50%;
@@ -265,6 +265,49 @@
             color: #4da3ff;
         }
 
+        /* ── Skills Section ── */
+        .skill-group {
+            margin-bottom: 4px;
+        }
+
+        .skill-group-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid transparent;
+        }
+
+        /* Colour variants – light mode */
+        .badge-blue   { background: #dbeafe; color: #1d4ed8; border-color: #bfdbfe; }
+        .badge-green  { background: #dcfce7; color: #15803d; border-color: #bbf7d0; }
+        .badge-purple { background: #ede9fe; color: #6d28d9; border-color: #ddd6fe; }
+        .badge-orange { background: #ffedd5; color: #c2410c; border-color: #fed7aa; }
+        .badge-gray   { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+
+        /* Colour variants – dark mode */
+        body.dark-mode .badge-blue   { background: #1e3a5f; color: #93c5fd; border-color: #1d4ed8; }
+        body.dark-mode .badge-green  { background: #14532d; color: #86efac; border-color: #15803d; }
+        body.dark-mode .badge-purple { background: #2e1065; color: #c4b5fd; border-color: #6d28d9; }
+        body.dark-mode .badge-orange { background: #431407; color: #fdba74; border-color: #c2410c; }
+        body.dark-mode .badge-gray   { background: #1e293b; color: #94a3b8; border-color: #334155; }
+
         @media (max-width: 768px) {
             .nav-links a { margin-right: 12px; font-size: 0.85rem; }
             section { padding: 16px; }
@@ -383,30 +426,97 @@
             <section id="skills" class="fade-in appear">
                 <h2>Skills</h2>
 
-                <h6 class="fw-bold mt-3">Programming</h6>
-                <div>
-                    <span class="badge">Python</span>
-                    <span class="badge">CAPL</span>
-                    <span class="badge">Embedded C</span>
-                    <span class="badge">C++</span>
+                <!-- Programming -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">💻 Programming</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-blue">Python</span>
+                        <span class="skill-badge badge-blue">CAPL</span>
+                        <span class="skill-badge badge-blue">Embedded C</span>
+                        <span class="skill-badge badge-blue">C</span>
+                        <span class="skill-badge badge-blue">C++</span>
+                    </div>
                 </div>
 
-                <h6 class="fw-bold mt-3">Automotive Protocols</h6>
-                <div>
-                    <span class="badge">CAN / CANFD</span>
-                    <span class="badge">DoIP</span>
-                    <span class="badge">UDS (ISO 14229)</span>
-                    <span class="badge">OBD (SAE J1979)</span>
+                <!-- Communication Protocols -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">📡 Communication Protocols</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-green">CAN</span>
+                        <span class="skill-badge badge-green">CANFD</span>
+                        <span class="skill-badge badge-green">Ethernet DoIP</span>
+                        <span class="skill-badge badge-green">UART</span>
+                        <span class="skill-badge badge-green">I2C</span>
+                        <span class="skill-badge badge-green">SPI</span>
+                    </div>
                 </div>
 
-                <h6 class="fw-bold mt-3">Tools</h6>
-                <div>
-                    <span class="badge">CANoe</span>
-                    <span class="badge">CANdela</span>
-                    <span class="badge">Monaco DTS9</span>
-                    <span class="badge">vTESTstudio</span>
-                    <span class="badge">Jenkins</span>
-                    <span class="badge">Git</span>
+                <!-- Tools -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">🛠 Tools</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-purple">CANdela Studio</span>
+                        <span class="skill-badge badge-purple">CANoe</span>
+                        <span class="skill-badge badge-purple">Monaco DTS9</span>
+                        <span class="skill-badge badge-purple">OTX Studio</span>
+                        <span class="skill-badge badge-purple">Lauterbach</span>
+                        <span class="skill-badge badge-purple">vTESTstudio</span>
+                        <span class="skill-badge badge-purple">MATLAB</span>
+                        <span class="skill-badge badge-purple">Keil</span>
+                        <span class="skill-badge badge-purple">GIT</span>
+                        <span class="skill-badge badge-purple">SVN</span>
+                        <span class="skill-badge badge-purple">STARC</span>
+                        <span class="skill-badge badge-purple">DOORS</span>
+                        <span class="skill-badge badge-purple">JIRA</span>
+                    </div>
+                </div>
+
+                <!-- Python Frameworks -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">🐍 Python Frameworks</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-orange">Pandas</span>
+                        <span class="skill-badge badge-orange">Numpy</span>
+                        <span class="skill-badge badge-orange">PyVisa</span>
+                        <span class="skill-badge badge-orange">bs4</span>
+                        <span class="skill-badge badge-orange">SQLite</span>
+                        <span class="skill-badge badge-orange">Selenium</span>
+                        <span class="skill-badge badge-orange">PyQt5</span>
+                        <span class="skill-badge badge-orange">PySide6</span>
+                        <span class="skill-badge badge-orange">Tkinter</span>
+                    </div>
+                </div>
+
+                <!-- Testing Frameworks -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">🧪 Testing Frameworks</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-orange">Robot Framework</span>
+                        <span class="skill-badge badge-orange">PyTest</span>
+                    </div>
+                </div>
+
+                <!-- Others -->
+                <div class="skill-group mt-3">
+                    <div class="skill-group-label">⚙️ Others</div>
+                    <div class="skill-badges">
+                        <span class="skill-badge badge-gray">UDS (ISO 14229)</span>
+                        <span class="skill-badge badge-gray">OBD (SAE J1979)</span>
+                        <span class="skill-badge badge-gray">FuSa</span>
+                        <span class="skill-badge badge-gray">Battery Management System</span>
+                        <span class="skill-badge badge-gray">Firmware Coding</span>
+                        <span class="skill-badge badge-gray">VCU</span>
+                        <span class="skill-badge badge-gray">RTOS</span>
+                        <span class="skill-badge badge-gray">Bare Metal</span>
+                        <span class="skill-badge badge-gray">CDD Authoring</span>
+                        <span class="skill-badge badge-gray">ODX</span>
+                        <span class="skill-badge badge-gray">Jenkins</span>
+                        <span class="skill-badge badge-gray">CI/CD Pipeline</span>
+                        <span class="skill-badge badge-gray">Classic AUTOSAR</span>
+                        <span class="skill-badge badge-gray">Adaptive AUTOSAR</span>
+                        <span class="skill-badge badge-gray">Black Box Testing</span>
+                        <span class="skill-badge badge-gray">Traceability</span>
+                    </div>
                 </div>
             </section>
 
