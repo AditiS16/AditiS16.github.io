@@ -49,24 +49,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        3. Dark Mode Toggle (with persistence)
-    ========================================== */
+    ========================================= */
+
     const toggleBtn = document.getElementById("darkModeToggle");
 
-    // Load saved theme
-    if (localStorage.getItem("theme") === "dark") {
+    // Apply saved theme on page load
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
         document.body.classList.add("dark-mode");
+        if (toggleBtn) toggleBtn.textContent = "☀ Light Mode";
     }
 
+    // Toggle theme
     if (toggleBtn) {
         toggleBtn.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
+
+            const isDark = document.body.classList.toggle("dark-mode");
 
             // Save preference
-            if (document.body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+
+            // Update button text
+            toggleBtn.textContent = isDark ? "☀ Light Mode" : "🌙 Dark Mode";
+
         });
     }
 
