@@ -211,21 +211,51 @@
             border-color: #cccccc !important;
         }
 
-        /* ── GitHub button: visible in light & dark mode ── */
+        /* ── Header buttons: all white outline on dark background ── */
+        .profile-header .btn-outline-primary {
+            color: #ffffff !important;
+            border-color: rgba(255,255,255,0.6) !important;
+            background-color: transparent !important;
+        }
+        .profile-header .btn-outline-primary:hover {
+            background-color: rgba(255,255,255,0.15) !important;
+            border-color: #ffffff !important;
+        }
+        .profile-header .btn-outline-secondary {
+            color: #ffffff !important;
+            border-color: rgba(255,255,255,0.6) !important;
+            background-color: transparent !important;
+        }
+        .profile-header .btn-outline-secondary:hover {
+            background-color: rgba(255,255,255,0.15) !important;
+            border-color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-outline-primary {
+            color: #4da3ff !important;
+            border-color: #4da3ff !important;
+        }
+
+        body.dark-mode .btn-outline-secondary {
+            color: #cccccc !important;
+            border-color: #cccccc !important;
+        }
+
+        /* ── GitHub button: outline style matching LinkedIn & Resume ── */
         .btn-github {
             color: #ffffff !important;
-            background-color: transparent !important;  ← no fill, transparent
-            border: 1px solid rgba(255,255,255,0.6) !important;  ← white outline
+            background-color: transparent !important;
+            border: 1px solid rgba(255,255,255,0.6) !important;
             transition: all 0.2s ease;
         }
         .btn-github:hover {
-            background-color: rgba(255,255,255,0.15) !important;  ← subtle white tint
+            background-color: rgba(255,255,255,0.15) !important;
             border-color: #ffffff !important;
             color: #ffffff !important;
         }
         body.dark-mode .btn-github {
             color: #ffffff !important;
-            border-color: rgba(255,255,255,0.5) !important;  ← slightly softer in dark
+            border-color: rgba(255,255,255,0.5) !important;
         }
         body.dark-mode .btn-github:hover {
             background-color: rgba(255,255,255,0.1) !important;
