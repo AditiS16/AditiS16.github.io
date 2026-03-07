@@ -293,6 +293,40 @@
             display: inline-block;
             border: 1px solid transparent;
         }
+        /* ── LinkedIn Posts Card ── */
+        .linkedin-card {
+            background: linear-gradient(135deg, #f0f7ff, #e8f2ff);
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .linkedin-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .btn-linkedin {
+            background-color: #0a66c2;
+            color: #ffffff !important;
+            font-weight: 600;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .btn-linkedin:hover {
+            background-color: #004182;
+            transform: translateY(-2px);
+        }
+        body.dark-mode .linkedin-card {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-color: #1d4ed8;
+        }
+        body.dark-mode .linkedin-card p {
+            color: #94a3b8 !important;
+        }
 
         /* Colour variants – light mode */
         .badge-blue   { background: #dbeafe; color: #1d4ed8; border-color: #bfdbfe; }
@@ -352,6 +386,7 @@
         <a href="#skills">Skills</a>
         <a href="#certifications">Certifications</a>
         <a href="#education">Education</a>
+        <a href="#linkedin-posts">LinkedIn</a>
     </nav>
 
     <div class="row">
@@ -598,6 +633,7 @@
             <section id="linkedin-posts" class="fade-in appear">
                 <h2>LinkedIn Posts</h2>
                 <div class="linkedin-card">
+                    <div class="linkedin-icon">💼</div>
                     <p class="small mb-3">I regularly share posts on automotive engineering, ADAS, HIL testing, diagnostics, and automation — covering technical deep-dives, project insights, and industry learnings.</p>
                     <a href="https://www.linkedin.com/in/aditisarkar16/recent-activity/all/" class="btn btn-linkedin w-100" target="_blank">
                         View My Posts →
